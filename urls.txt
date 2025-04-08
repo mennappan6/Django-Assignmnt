@@ -1,0 +1,14 @@
+# core/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='home'),
+    path('signup/', views.signup_view, name='signup'),
+    path('login/', views.login_view, name='login'),
+    path('logout/', views.logout_view, name='logout'),
+    path('ask/', views.ask_question, name='ask'),
+    path('question/<int:id>/', views.view_question, name='view_question'),
+    path('question/<int:id>/answer/', views.answer_question, name='answer_question'),
+    path('like/<int:answer_id>/', views.like_answer, name='like_answer'),
+]
